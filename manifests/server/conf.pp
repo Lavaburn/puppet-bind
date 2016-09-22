@@ -62,6 +62,8 @@
 #   and the value is an array of config lines. Default: empty
 #  $includes:
 #   Array of absolute paths to named.conf include files. Default: empty
+#  $enable_default_log:
+#   Enable default logging configuration. Default: true
 #
 # Sample Usage :
 #  bind::server::conf { '/etc/named.conf':
@@ -121,6 +123,7 @@ define bind::server::conf (
   $keys                   = {},
   $includes               = [],
   $views                  = {},
+  $enable_default_log     = true,
 ) {
 
   # Everything is inside a single template
