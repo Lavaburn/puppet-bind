@@ -93,6 +93,10 @@ options {
     dnssec-enable <%= @dnssec_enable %>;
     dnssec-validation <%= @dnssec_validation %>;
     dnssec-lookaside <%= @dnssec_lookaside %>;
+    
+<% if  @key_directory -%>
+    key-directory <%= @key_directory %>;
+<% end -%>
 
     /* Path to ISC DLV key */
     bindkeys-file "<%= @dnssec_bindkeys_file %>";

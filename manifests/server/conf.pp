@@ -54,6 +54,8 @@
 #   DNSSEC lookaside type. Default: 'auto'
 #  $dnssec_bindkeys_file:
 #   DNSSEC path to keys file. Default: '/etc/named.iscdlv.key'
+#  $key_directory:
+#   Directory where zone keys are stored.
 #  $zones:
 #   Hash of managed zones and their configuration. The key is the zone name
 #   and the value is an array of config lines. Default: empty
@@ -119,6 +121,7 @@ define bind::server::conf (
   $dnssec_validation      = 'yes',
   $dnssec_lookaside       = 'auto',
   $dnssec_bindkeys_file   = '/etc/named.iscdlv.key',
+  $key_directory          = undef,
   $zones                  = {},
   $keys                   = {},
   $includes               = [],
